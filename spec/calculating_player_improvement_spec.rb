@@ -8,7 +8,8 @@ describe 'calculating improvement' do
 
     When(:result) {query.GetMostImprovedPlayerForYears(startingYear,endingYear)}
 
-    Then { expect(result[:playerId]).to eq('hillaa01')}
+    Then { expect(result[:player]).to eq('Aaron Hill')}
+    Then { expect(result[:improvement]).to eq(0.08137829912023462)}
     end
 
 end

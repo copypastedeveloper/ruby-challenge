@@ -1,24 +1,10 @@
 # OnLifeChallenge
 
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'OnLifeChallenge'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install OnLifeChallenge
+Basic math calculations about baseball statistics
 
 ## Usage
 
-TODO: Write usage instructions here
+To use, execute `ruby lib/OnLifeChallenge/OnlifeChallenge.rb`.  The results will be dumped to the console window.
 
 ## Contributing
 

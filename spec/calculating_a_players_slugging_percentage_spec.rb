@@ -1,5 +1,3 @@
-require 'rspec/given'
-require_relative '../lib/player_yearly_statistics'
 
 describe 'calculating slugging percentage' do
 

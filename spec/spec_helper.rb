@@ -14,9 +14,9 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'rspec/given'
-require_relative '../lib/BaseballQuery'
-require_relative '../lib/BaseballStatsProvider'
-require_relative '../lib/player_yearly_statistics'
+require_relative '../lib/OnLifeChallenge/BaseballQuery'
+require_relative '../lib/OnLifeChallenge/BaseballStatsProvider'
+require_relative '../lib/OnLifeChallenge/player_yearly_statistics'
 
 RSpec.configure do |config|
 # The settings below are suggested to provide a good initial experience
