@@ -38,4 +38,12 @@ describe 'calculating slugging percentage' do
 
     Then {expect(result).to eq(1)}
   end
+
+  context 'no hits in 0 at bats' do
+    Given(:playerStats) {GetStatistics( '0','0','0','0','0')}
+
+    When(:result) {playerStats.SluggingPercentage}
+
+    Then {expect(result).to eq(0)}
+  end
 end

@@ -1,5 +1,5 @@
-require 'OnLifeChallenge/version'
-require 'OnLifeChallenge/BaseballQuery'
+require_relative 'OnLifeChallenge/version'
+require_relative 'OnLifeChallenge/BaseballQuery'
 
 class OnLifeChallengeHelper
 
@@ -7,18 +7,26 @@ class OnLifeChallengeHelper
     @baseballQuery = BaseballQuery.new
   end
 
-  def GetMostImprovedPlayer(startYear,endYear)
+  def PrintMostImprovedPlayer(startYear,endYear)
     @result = @baseballQuery.GetMostImprovedPlayerForYears(startYear,endYear)
     puts "#{@result[:player]} improved by #{@result[:improvement]} between #{startYear} and #{endYear}"
   end
 
-  def GetSluggingPercentageForOakland(year)
-    @result = @baseballQuery.GetStatisticsByTeam('oak',year).map {|stat| {"player name" => stat.name, "Slugging percentage" => stat.SluggingPercentage } }
+  def PrintSluggingPercentageForOakland(year)
+    @result = @baseballQuery.GetStatisticsByTeam('oak',year).map {|stat| "#{stat.name} had a slugging percentage of  #{stat.SluggingPercentage } for #{year}" }
     puts @result
+  end
+
+  def PrintTripleCrownWinner(year)
+    @baseballQuery.GetTripleCrownWinnerByYear(year).each do |result|
+      puts "#{result[:league]} winner for #{year} was #{result[:winner]}"
+    end
   end
 
 end
 
 challenge = OnLifeChallengeHelper.new
-challenge.GetSluggingPercentageForOakland(2007)
-challenge.GetMostImprovedPlayer(2009,2010)
+challenge.PrintSluggingPercentageForOakland(2007)
+challenge.PrintMostImprovedPlayer(2009,2010)
+challenge.PrintTripleCrownWinner(2011)
+challenge.PrintTripleCrownWinner(2012)

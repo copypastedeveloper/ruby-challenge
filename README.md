@@ -4,7 +4,7 @@ Basic math calculations about baseball statistics
 
 ## Usage
 
-To use, execute `ruby lib/OnLifeChallenge/OnlifeChallenge.rb`.  The results will be dumped to the console window.
+To use, execute `ruby lib/OnLifeChallenge.rb`.  The results will be dumped to the console window.
 
 ## Contributing
 
