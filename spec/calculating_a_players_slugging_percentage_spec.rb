@@ -2,15 +2,13 @@
 describe 'calculating slugging percentage' do
 
   def GetStatistics (hits,doubles, triples, homeRuns, atBats)
-    stats = PlayerYearlyStatistics.new('player1','2009','NL','OAK','100',atBats,'5',hits,doubles,triples,homeRuns,'10','','', 'player1')
-    pp stats
-    return stats
+    PlayerYearlyStatistics.new('player1','2009','NL','OAK','100',atBats,'5',hits,doubles,triples,homeRuns,'10','','', 'player1')
   end
 
   context 'all at-bats are home runs' do
     Given(:playerStats) {GetStatistics( '200','0','0','200','200')}
 
-    When(:result) {playerStats.SluggingPercentage}
+    When(:result) {playerStats.slugging_percentage}
 
     Then {expect(result).to eq(4)}
   end
@@ -18,7 +16,7 @@ describe 'calculating slugging percentage' do
   context 'no hits in 200 at bats' do
     Given(:playerStats) {GetStatistics( '0','0','0','0','200')}
 
-    When(:result) {playerStats.SluggingPercentage}
+    When(:result) {playerStats.slugging_percentage}
 
     Then {expect(result).to eq(0)}
   end
@@ -26,7 +24,7 @@ describe 'calculating slugging percentage' do
   context 'all 200 at bats are singles' do
     Given(:playerStats) {GetStatistics( '200','0','0','0','200')}
 
-    When(:result) {playerStats.SluggingPercentage}
+    When(:result) {playerStats.slugging_percentage}
 
     Then {expect(result).to eq(1)}
   end
@@ -34,7 +32,7 @@ describe 'calculating slugging percentage' do
   context 'half of the at bats are doubles and no other hits are recorded' do
     Given(:playerStats) {GetStatistics( '100','100','0','0','200')}
 
-    When(:result) {playerStats.SluggingPercentage}
+    When(:result) {playerStats.slugging_percentage}
 
     Then {expect(result).to eq(1)}
   end
@@ -42,7 +40,7 @@ describe 'calculating slugging percentage' do
   context 'no hits in 0 at bats' do
     Given(:playerStats) {GetStatistics( '0','0','0','0','0')}
 
-    When(:result) {playerStats.SluggingPercentage}
+    When(:result) {playerStats.slugging_percentage}
 
     Then {expect(result).to eq(0)}
   end

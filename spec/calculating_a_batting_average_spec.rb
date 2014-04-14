@@ -8,7 +8,7 @@ describe 'calculating batting averages' do
   context '20 hits in 20 at bats' do
     Given(:playerStats) {GetStatistics( '20','20')}
 
-    When(:result) {playerStats.BattingAverage}
+    When(:result) {playerStats.batting_average}
 
     Then {expect(result).to eq(1)}
   end
@@ -16,7 +16,7 @@ describe 'calculating batting averages' do
   context '0 hits in 20 at bats' do
     Given(:playerStats) {GetStatistics( '0','20')}
 
-    When(:result) {playerStats.BattingAverage}
+    When(:result) {playerStats.batting_average}
 
     Then {expect(result).to eq(0)}
   end
@@ -24,7 +24,7 @@ describe 'calculating batting averages' do
   context '10 hits in 20 at bats' do
     Given(:playerStats) {GetStatistics( '10','20')}
 
-    When(:result) {playerStats.BattingAverage}
+    When(:result) {playerStats.batting_average}
 
     Then {expect(result).to eq(0.5)}
   end
@@ -32,7 +32,7 @@ describe 'calculating batting averages' do
   context 'nil hits in 20 at bats' do
     Given(:playerStats) {GetStatistics nil, '20' }
 
-    When(:result) {playerStats.BattingAverage}
+    When(:result) {playerStats.batting_average}
 
     Then {expect(result).to eq(0)}
   end
@@ -40,7 +40,7 @@ describe 'calculating batting averages' do
   context '20 hits in nil at bats' do
     Given(:playerStats) {GetStatistics('20', nil)}
 
-    When(:result) {playerStats.BattingAverage}
+    When(:result) {playerStats.batting_average}
 
     Then {expect(result).to eq(0)}
   end
@@ -48,7 +48,7 @@ describe 'calculating batting averages' do
   context 'nil hits in nil at bats' do
     Given(:playerStats) {GetStatistics( nil, nil)}
 
-    When(:result) {playerStats.BattingAverage}
+    When(:result) {playerStats.batting_average}
 
     Then {expect(result).to eq(0)}
   end

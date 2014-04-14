@@ -6,7 +6,7 @@ describe 'getting stats for a given team and year' do
     Given(:year) {2009}
     Given(:team) {'OAK'}
 
-    When(:result) {query.GetStatisticsByTeam(team,year)}
+    When(:result) {query.get_statistics_by_team(team,year)}
 
     Then { expect(result.all? {|stat| stat.teamId == 'OAK'}).to eq(true)}
     Then { expect(result.all? {|stat| stat.year == 2009}).to eq(true)}

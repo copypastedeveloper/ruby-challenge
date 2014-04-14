@@ -6,7 +6,7 @@ describe 'getting triple crown winners by league for 2012' do
     Given(:query) {BaseballQuery.new}
     Given(:year) {2012}
 
-    When(:result) {query.GetTripleCrownWinnerByYear(year)}
+    When(:result) {query.get_triple_crown_winner_by_year(year)}
 
     Then { expect(result.find {|winner| winner[:league] == 'AL'}[:winner]).to eq('Miguel Cabrera')}
     Then { expect(result.find {|winner| winner[:league] == 'NL'}[:winner]).to eq('no one')}
@@ -16,7 +16,7 @@ describe 'getting triple crown winners by league for 2012' do
     Given(:query) {BaseballQuery.new}
     Given(:year) {2011}
 
-    When(:result) {query.GetTripleCrownWinnerByYear(year)}
+    When(:result) {query.get_triple_crown_winner_by_year(year)}
 
     Then { expect(result.find {|winner| winner[:league] == 'AL'}[:winner]).to eq('no one')}
     Then { expect(result.find {|winner| winner[:league] == 'NL'}[:winner]).to eq('no one')}

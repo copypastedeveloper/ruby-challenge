@@ -8,17 +8,17 @@ class OnLifeChallengeHelper
   end
 
   def PrintMostImprovedPlayer(startYear,endYear)
-    @result = @baseballQuery.GetMostImprovedPlayerForYears(startYear,endYear)
+    @result = @baseballQuery.get_most_improved_player_for_years(startYear,endYear)
     puts "#{@result[:player]} improved by #{@result[:improvement]} between #{startYear} and #{endYear}"
   end
 
   def PrintSluggingPercentageForOakland(year)
-    @result = @baseballQuery.GetStatisticsByTeam('oak',year).map {|stat| "#{stat.name} had a slugging percentage of  #{stat.SluggingPercentage } for #{year}" }
+    @result = @baseballQuery.get_statistics_by_team('oak',year).map {|stat| "#{stat.name} had a slugging percentage of  #{stat.slugging_percentage } for #{year}" }
     puts @result
   end
 
   def PrintTripleCrownWinner(year)
-    @baseballQuery.GetTripleCrownWinnerByYear(year).each do |result|
+    @baseballQuery.get_triple_crown_winner_by_year(year).each do |result|
       puts "#{result[:league]} winner for #{year} was #{result[:winner]}"
     end
   end

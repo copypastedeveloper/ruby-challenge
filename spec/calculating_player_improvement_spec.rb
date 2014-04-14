@@ -6,7 +6,7 @@ describe 'calculating improvement' do
     Given(:startingYear) {2009}
     Given(:endingYear) {2010}
 
-    When(:result) {query.GetMostImprovedPlayerForYears(startingYear,endingYear)}
+    When(:result) {query.get_most_improved_player_for_years(startingYear,endingYear)}
 
     Then { expect(result[:player]).to eq('Aaron Hill')}
     Then { expect(result[:improvement]).to eq(0.08137829912023462)}
